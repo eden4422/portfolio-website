@@ -122,15 +122,9 @@ export default function Home() {
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <a
                   href="#projects"
-                  className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                  className="bg-blue-600 text-white px-12 py-5 rounded-lg hover:bg-blue-700 transition-all font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
                   View My Work
-                </a>
-                <a
-                  href="#contact"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition-all font-semibold border-2 border-blue-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                >
-                  Contact Me
                 </a>
               </div>
             </div>
@@ -156,19 +150,24 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                I&apos;m a passionate developer with experience in building
-                modern web applications. I love turning complex problems into
-                simple, beautiful, and intuitive solutions.
+                I&apos;m a software engineer passionate about building products
+                that feel polished, fast, and intentional. I specialize in
+                full-stack development with modern technologies like React,
+                Next.js, TypeScript, and Supabase, crafting both clean user
+                interfaces and scalable backend systems.
               </p>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                With a strong foundation in both front-end and back-end
-                technologies, I create full-stack applications that are not only
-                functional but also provide an excellent user experience.
+                Currently, I&apos;m building Game Vault, a full-stack platform
+                for tracking and showcasing game collections. I enjoy owning
+                products end-to-end—from authentication and database design to
+                animated UI components and deployment—and refining them until
+                they feel exceptional.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                When I&apos;m not coding, you can find me learning new
-                technologies, contributing to open-source projects, or sharing
-                knowledge with the developer community.
+                I&apos;m especially interested in systems that operate at scale,
+                AI-powered experiences, and tools that empower people. I&apos;m
+                constantly learning and pushing my work beyond &quot;it
+                works&quot; to &quot;it&apos;s excellent.&quot;
               </p>
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 shadow-md">
@@ -179,13 +178,13 @@ export default function Home() {
                 <li className="flex items-start gap-3">
                   <span className="text-blue-600 text-2xl font-bold">▹</span>
                   <span className="text-gray-700 text-lg">
-                    3+ years of development experience
+                    1+ years of development experience
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-blue-600 text-2xl font-bold">▹</span>
                   <span className="text-gray-700 text-lg">
-                    10+ completed projects
+                    3+ completed projects
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -261,7 +260,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Languages</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Languages
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {skills
                   .filter((s) => s.category === "languages")
@@ -309,7 +310,9 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Tools &amp; DevOps</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Tools &amp; DevOps
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {skills
                   .filter((s) => s.category === "tools")

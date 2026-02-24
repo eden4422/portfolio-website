@@ -10,7 +10,6 @@ export default function Header() {
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -32,12 +31,6 @@ export default function Header() {
                 {item.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-semibold"
-            >
-              Open to Work
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -84,13 +77,6 @@ export default function Header() {
                 {item.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="block mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors text-center font-semibold"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Open to Work
-            </a>
           </div>
         )}
       </nav>
