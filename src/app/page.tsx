@@ -218,46 +218,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-24 px-6 bg-gray-50">
-        <div className="w-full max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Featured Projects
-            </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Here are some of my recent projects that showcase my skills and
-              experience.
-            </p>
-          </div>
-          {/* Featured projects - larger cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {projects
-              .filter((p) => p.featured)
-              .map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-          </div>
-
-          {/* Non-featured projects - compact cards */}
-          {projects.some((p) => !p.featured) && (
-            <>
-              <h3 className="text-xl font-semibold text-gray-500 mb-6 text-center tracking-wide uppercase">
-                More Projects
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {projects
-                  .filter((p) => !p.featured)
-                  .map((project) => (
-                    <ProjectCard key={project.id} project={project} compact />
-                  ))}
-              </div>
-            </>
-          )}
-        </div>
-      </section>
-
       {/* Skills Section */}
       <section id="skills" className="py-24 px-6 bg-white">
         <div className="w-full max-w-6xl mx-auto">
@@ -343,6 +303,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section id="projects" className="py-24 px-6 bg-gray-50">
+        <div className="w-full max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Featured Projects
+            </h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Here are some of my recent projects that showcase my skills and
+              experience.
+            </p>
+          </div>
+          {/* Featured projects - larger cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {projects
+              .filter((p) => p.featured)
+              .map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+          </div>
+
+          {/* Non-featured projects - compact cards */}
+          {projects.some((p) => !p.featured) && (
+            <>
+              <h3 className="text-xl font-semibold text-gray-500 mb-6 text-center tracking-wide uppercase">
+                More Projects
+              </h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {projects
+                  .filter((p) => !p.featured)
+                  .map((project) => (
+                    <ProjectCard key={project.id} project={project} compact />
+                  ))}
+              </div>
+            </>
+          )}
+        </div>
+      </section>
       <Footer />
     </div>
   );
