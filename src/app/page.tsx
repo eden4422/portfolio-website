@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
+import TypingAnimation from "@/components/TypingAnimation";
 import { Project } from "@/types";
 
 // Sample projects data - you can replace this with your actual projects
@@ -112,7 +113,19 @@ export default function Home() {
                 <span className="text-blue-600">Carlos Romero</span>
               </h1>
               <p className="text-2xl lg:text-3xl text-gray-700 mb-6 font-semibold">
-                Full Stack Developer
+                <TypingAnimation
+                  words={[
+                    "Product Engineer",
+                    "Full-Stack Architect",
+                    "Platform Builder",
+                    "End-to-End Developer",
+                    "System Designer",
+                    "Experienced Engineer",
+                  ]}
+                  typingSpeed={100}
+                  deletingSpeed={50}
+                  delayBetweenWords={2000}
+                />
               </p>
               <p className="text-lg text-gray-600 mb-10 leading-relaxed">
                 I build exceptional digital experiences that are fast, scalable,
