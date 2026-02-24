@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import TypingAnimation from "@/components/TypingAnimation";
 import SkillCard from "@/components/SkillCard";
-import { Project } from "@/types";
+import { getAllProjects } from "@/lib/projects";
 import {
   SiJavascript,
   SiTypescript,
@@ -23,72 +23,7 @@ import {
 } from "react-icons/si";
 import { FaServer, FaDatabase, FaJava } from "react-icons/fa";
 
-// Sample projects data - you can replace this with your actual projects
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website to showcase my projects, skills, and experience as a full-stack developer.",
-    image: "/Images/website.png",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/yourusername/portfolio",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Game Vault",
-    description:
-      "A web application that allows users to browse, search, and save their favorite video games. Built with React and integrated with a video game database API.",
-    image: "/Images/game-vault.png",
-    technologies: [
-      "Prive Repository",
-      "In Active Development",
-      "Demo Available",
-    ],
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Air Traffic Control Speech Recognition System",
-    description:
-      "Built a speech recognition system converting ATC taxi instructions into structured JSON for visualization",
-    image: "/Images/Air-Traffic.png",
-    technologies: [
-      "Python",
-      "Vosk (offline ASR)",
-      "spaCy",
-      "MongoDB / pymongo",
-      "Tkinter",
-    ],
-    githubUrl:
-      "https://github.com/eden4422/ATC-Taxi-Commands-Voice-Recognition",
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Real Stats",
-    description:
-      "Created during Coughacks Hack-a-Thon in 24 hours with a team of five developers. A unique wellness tracker inspired by game character stat sheets that helps users break down daunting self-improvement goals into manageable steps, adding gamification and motivation to personal progress tracking.",
-    image: "/Images/Real-Stats.png",
-    technologies: ["C#", "XAML", "Windows Presentation Foundation"],
-    githubUrl: "https://github.com/eden4422/Personal-Well-Being-Stats",
-    featured: false,
-    hackathon: true,
-  },
-  {
-    id: 5,
-    title: "Steganography Image Password Manager",
-    description:
-      "A cross-platform password manager using steganography to hide passwords within images.",
-    image: "/Images/steganography.png",
-    technologies: ["C#", ".NET MAUI Cross-Platform"],
-    githubUrl:
-      "https://github.com/NhanDucNguyen99/Steganography-Image-Password",
-    featured: false,
-    hackathon: true,
-  },
-];
+const projects = getAllProjects();
 
 const skills = [
   // Languages
@@ -221,7 +156,7 @@ export default function Home() {
                 <li className="flex items-start gap-3">
                   <span className="text-blue-600 text-2xl font-bold">▹</span>
                   <span className="text-gray-700 text-lg">
-                    1+ years of development experience
+                    1.5+ years of development experience
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

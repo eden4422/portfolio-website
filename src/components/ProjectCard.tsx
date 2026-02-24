@@ -1,5 +1,8 @@
+"use client";
+
 import { Project } from "@/types";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface ProjectCardProps {
   project: Project;
@@ -10,12 +13,19 @@ export default function ProjectCard({
   project,
   compact = false,
 }: ProjectCardProps) {
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    router.push(`/projects/${project.id}`);
+  };
+
   return (
     <div
-      className={`group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${compact ? "opacity-90" : ""}`}
+      onClick={handleCardClick}
+      className={`group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col cursor-pointer ${compact ? "opacity-90" : ""}`}
     >
       <div
-        className={`relative bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 overflow-hidden ${compact ? "h-36" : "h-52"}`}
+        className={`relative bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 overflow-hidden flex-shrink-0 ${compact ? "h-36" : "h-52"}`}
       >
         {project.image && (
           <Image
@@ -38,38 +48,39 @@ export default function ProjectCard({
         )}
       </div>
 
-      <div className={compact ? "p-4" : "p-6"}>
+      <div className={`flex flex-col flex-grow ${compact ? "p-4" : "p-6"}`}>
         <h3
-          className={`font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors ${compact ? "text-lg" : "text-2xl mb-3"}`}
+          className={`font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors ${compact ? "text-lg h-12 line-clamp-2" : "text-2xl mb-3 h-16 line-clamp-2"}`}
         >
           {project.title}
         </h3>
 
         <p
-          className={`text-gray-600 leading-relaxed ${compact ? "text-sm mb-3 line-clamp-2" : "mb-5 line-clamp-3"}`}
+          className={`text-gray-600 leading-relaxed flex-grow ${compact ? "text-sm mb-3 line-clamp-2" : "mb-5 line-clamp-3"}`}
         >
           {project.description}
         </p>
 
         <div
-          className={`flex flex-wrap gap-1.5 ${compact ? "mb-4" : "mb-6 gap-2"}`}
+          className={`flex flex-wrap gap-1.5 ${compact ? "mb-4 min-h-[4rem]" : "mb-6 gap-2 min-h-[5rem]"}`}
         >
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className={`bg-blue-50 text-blue-700 font-semibold rounded-full border border-blue-100 ${compact ? "px-2 py-1 text-xs" : "px-3 py-1.5 text-xs"}`}
+              className={`bg-blue-50 text-blue-700 font-semibold rounded-full border border-blue-100 h-fit ${compact ? "px-2 py-1 text-xs" : "px-3 py-1.5 text-xs"}`}
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="flex gap-4 pt-4 border-t border-gray-100">
+        <div className="flex gap-4 pt-4 border-t border-gray-100 mt-auto">
           {project.githubUrl && (
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -84,6 +95,7 @@ export default function ProjectCard({
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
               <svg

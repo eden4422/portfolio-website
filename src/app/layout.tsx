@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Welcome to the portfolio of Carlos Romero, showcasing projects and skills in full-stack development.",
   icons: {
-    icon: "/file.svg",
+    icon: "/portfolio.svg",
   },
 };
 
