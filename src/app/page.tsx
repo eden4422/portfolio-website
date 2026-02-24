@@ -2,7 +2,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import TypingAnimation from "@/components/TypingAnimation";
+import SkillCard from "@/components/SkillCard";
 import { Project } from "@/types";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiPython,
+  SiHtml5,
+  SiCss3,
+  SiPostgresql,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiMongodb,
+  SiGit,
+  SiDocker,
+  SiGooglecloud,
+  SiSharp,
+} from "react-icons/si";
+import { FaServer, FaDatabase, FaJava } from "react-icons/fa";
 
 // Sample projects data - you can replace this with your actual projects
 const projects: Project[] = [
@@ -73,29 +92,40 @@ const projects: Project[] = [
 
 const skills = [
   // Languages
-  { name: "JavaScript", category: "languages" as const },
-  { name: "TypeScript", category: "languages" as const },
-  { name: "Java", category: "languages" as const },
-  { name: "C#", category: "languages" as const },
-  { name: "Python", category: "languages" as const },
-  { name: "HTML", category: "languages" as const },
-  { name: "CSS", category: "languages" as const },
-  { name: "SQL", category: "languages" as const },
+  {
+    name: "JavaScript",
+    category: "languages" as const,
+    icon: <SiJavascript />,
+  },
+  {
+    name: "TypeScript",
+    category: "languages" as const,
+    icon: <SiTypescript />,
+  },
+  { name: "Java", category: "languages" as const, icon: <FaJava /> },
+  { name: "C#", category: "languages" as const, icon: <SiSharp /> },
+  { name: "Python", category: "languages" as const, icon: <SiPython /> },
+  { name: "HTML", category: "languages" as const, icon: <SiHtml5 /> },
+  { name: "CSS", category: "languages" as const, icon: <SiCss3 /> },
+  { name: "SQL", category: "languages" as const, icon: <FaDatabase /> },
   // Frontend
-  { name: "React", category: "frontend" as const },
-  { name: "Next.js", category: "frontend" as const },
-  { name: "Tailwind CSS", category: "frontend" as const },
+  { name: "React", category: "frontend" as const, icon: <SiReact /> },
+  { name: "Next.js", category: "frontend" as const, icon: <SiNextdotjs /> },
+  {
+    name: "Tailwind CSS",
+    category: "frontend" as const,
+    icon: <SiTailwindcss />,
+  },
   // Backend
-  { name: "Node.js", category: "backend" as const },
-  { name: "Express", category: "backend" as const },
-  { name: "REST APIs", category: "backend" as const },
-  { name: "PostgreSQL", category: "backend" as const },
-  { name: "MongoDB", category: "backend" as const },
+  { name: "Node.js", category: "backend" as const, icon: <SiNodedotjs /> },
+  { name: "REST APIs", category: "backend" as const, icon: <FaServer /> },
+  { name: "PostgreSQL", category: "backend" as const, icon: <SiPostgresql /> },
+  { name: "MongoDB", category: "backend" as const, icon: <SiMongodb /> },
   // Tools & DevOps
-  { name: "Git", category: "tools" as const },
-  { name: "Docker", category: "tools" as const },
-  { name: "CI/CD", category: "tools" as const },
-  { name: "Google Cloud", category: "tools" as const },
+  { name: "Git", category: "tools" as const, icon: <SiGit /> },
+  { name: "Docker", category: "tools" as const, icon: <SiDocker /> },
+  { name: "CI/CD", category: "tools" as const, icon: <FaServer /> },
+  { name: "Google Cloud", category: "tools" as const, icon: <SiGooglecloud /> },
 ];
 
 export default function Home() {
@@ -231,71 +261,83 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-12">
+            {/* Languages */}
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                 Languages
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {skills
                   .filter((s) => s.category === "languages")
-                  .map((skill) => (
-                    <span
+                  .map((skill, index) => (
+                    <SkillCard
                       key={skill.name}
-                      className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-lg font-medium"
-                    >
-                      {skill.name}
-                    </span>
+                      icon={skill.icon}
+                      name={skill.name}
+                      category={skill.category}
+                      delay={index * 50}
+                    />
                   ))}
               </div>
             </div>
 
+            {/* Frontend */}
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Frontend</h3>
-              <div className="flex flex-wrap gap-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Frontend
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {skills
                   .filter((s) => s.category === "frontend")
-                  .map((skill) => (
-                    <span
+                  .map((skill, index) => (
+                    <SkillCard
                       key={skill.name}
-                      className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg font-medium"
-                    >
-                      {skill.name}
-                    </span>
+                      icon={skill.icon}
+                      name={skill.name}
+                      category={skill.category}
+                      delay={index * 50}
+                    />
                   ))}
               </div>
             </div>
 
+            {/* Backend */}
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Backend</h3>
-              <div className="flex flex-wrap gap-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Backend
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {skills
                   .filter((s) => s.category === "backend")
-                  .map((skill) => (
-                    <span
+                  .map((skill, index) => (
+                    <SkillCard
                       key={skill.name}
-                      className="px-4 py-2 bg-green-100 text-green-700 rounded-lg font-medium"
-                    >
-                      {skill.name}
-                    </span>
+                      icon={skill.icon}
+                      name={skill.name}
+                      category={skill.category}
+                      delay={index * 50}
+                    />
                   ))}
               </div>
             </div>
 
+            {/* Tools & DevOps */}
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Tools &amp; DevOps
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Tools & DevOps
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {skills
                   .filter((s) => s.category === "tools")
-                  .map((skill) => (
-                    <span
+                  .map((skill, index) => (
+                    <SkillCard
                       key={skill.name}
-                      className="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg font-medium"
-                    >
-                      {skill.name}
-                    </span>
+                      icon={skill.icon}
+                      name={skill.name}
+                      category={skill.category}
+                      delay={index * 50}
+                    />
                   ))}
               </div>
             </div>
