@@ -245,7 +245,7 @@ export const projects: Project[] = [
       "Component-based architecture",
     ],
     impact:
-      "A reflection of personal growth — from a static college site written in pure HTML and CSS to a fully featured Next.js application. Successfully showcases my skills and projects to potential employers and clients with a clean, professional design.",
+      "A reflection of personal growth — from a static college site written in pure HTML and CSS to a fully featured Next.js application. Successfully showcases my skills and projects to potential employers with a clean, professional design.",
   },
   {
     id: 4,
