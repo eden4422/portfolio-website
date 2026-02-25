@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/portfolio-website", // Remove this line if deploying to username.github.io
+  basePath: process.env.NODE_ENV === "production" ? "/portfolio-website" : "",
   images: {
     unoptimized: true,
   },

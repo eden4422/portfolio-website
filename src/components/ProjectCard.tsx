@@ -50,13 +50,13 @@ export default function ProjectCard({
 
       <div className={`flex flex-col flex-grow ${compact ? "p-4" : "p-6"}`}>
         <h3
-          className={`font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors ${compact ? "text-lg h-12 line-clamp-2" : "text-2xl mb-3 h-16 line-clamp-2"}`}
+          className={`font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors ${compact ? "text-lg line-clamp-3" : "text-2xl mb-3 line-clamp-2"}`}
         >
           {project.title}
         </h3>
 
         <p
-          className={`text-gray-600 leading-relaxed flex-grow ${compact ? "text-sm mb-3 line-clamp-2" : "mb-5 line-clamp-3"}`}
+          className={`text-gray-600 leading-relaxed ${compact ? "text-sm mb-3 overflow-hidden max-h-[4.5rem] group-hover:max-h-48 transition-[max-height] duration-300 ease-in-out" : "mb-5 line-clamp-3 flex-grow"}`}
         >
           {project.description}
         </p>
