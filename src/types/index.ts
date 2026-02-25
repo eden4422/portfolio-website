@@ -6,6 +6,8 @@ export interface Project {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
+  previousGithubUrl?: string;
+  previousLiveUrl?: string;
   featured?: boolean;
   hackathon?: boolean;
   // Detailed page fields

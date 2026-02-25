@@ -201,15 +201,17 @@ export const projects: Project[] = [
     id: 3,
     title: "Portfolio Website",
     description:
-      "A personal portfolio website to showcase my projects, skills, and experience as a full-stack developer.",
+      "An upgraded rebuild of my original college portfolio — previously built with pure HTML and CSS — now reimagined as a modern full-stack application to showcase my projects, skills, and experience as a developer.",
     image: "/Images/website.png",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/yourusername/portfolio",
+    previousGithubUrl: "https://github.com/eden4422/website-resume",
+    previousLiveUrl: "https://eden4422.github.io/website-resume/",
     featured: true,
     slug: "portfolio-website",
     subtitle: "Modern Portfolio Built with Next.js 14",
     overview:
-      "A responsive and performant portfolio website showcasing my work as a full-stack developer. Built with the latest web technologies to demonstrate modern development practices and design principles.",
+      "A full rebuild of my original college portfolio, which was crafted with pure HTML and CSS. This version reimagines the site as a modern, responsive application using Next.js 14, TypeScript, and Tailwind CSS — demonstrating how far my skills have grown since those early days and reflecting current full-stack development practices.",
     techStack: {
       framework: "Next.js 14",
       language: "TypeScript",
@@ -243,7 +245,7 @@ export const projects: Project[] = [
       "Component-based architecture",
     ],
     impact:
-      "Successfully showcases my skills and projects to potential employers and clients with a clean, professional design.",
+      "A reflection of personal growth — from a static college site written in pure HTML and CSS to a fully featured Next.js application. Successfully showcases my skills and projects to potential employers and clients with a clean, professional design.",
   },
   {
     id: 4,
