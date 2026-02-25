@@ -29,7 +29,7 @@ export default function ProjectCard({
       >
         {project.image && (
           <Image
-            src={project.image}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH}${project.image}`}
             alt={project.title}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-300"

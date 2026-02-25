@@ -81,7 +81,7 @@ export default async function ProjectDetailPage({
         {project.image && (
           <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src={project.image}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}${project.image}`}
               alt={project.title}
               fill
               className="object-cover"
