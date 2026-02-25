@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Project } from "@/types";
 
 // This would typically come from a database or API
 // For now, we'll import it from a separate file
