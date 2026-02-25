@@ -1,4 +1,3 @@
-const basePath =
-  process.env.NODE_ENV === "production" ? "/portfolio-website" : "";
+const basePath = "";
 
 export default basePath;
