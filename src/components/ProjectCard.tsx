@@ -3,6 +3,7 @@
 import { Project } from "@/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import basePath from "@/lib/basePath";
 
 interface ProjectCardProps {
   project: Project;
@@ -29,7 +30,7 @@ export default function ProjectCard({
       >
         {project.image && (
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH}${project.image}`}
+            src={`${basePath}${project.image}`}
             alt={project.title}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-300"

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import basePath from "@/lib/basePath";
 
 // This would typically come from a database or API
 // For now, we'll import it from a separate file
@@ -81,7 +82,7 @@ export default async function ProjectDetailPage({
         {project.image && (
           <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}${project.image}`}
+              src={`${basePath}${project.image}`}
               alt={project.title}
               fill
               className="object-cover"
