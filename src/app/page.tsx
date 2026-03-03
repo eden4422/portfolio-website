@@ -156,7 +156,7 @@ export default function Home() {
                 <li className="flex items-start gap-3">
                   <span className="text-blue-600 text-2xl font-bold">▹</span>
                   <span className="text-gray-700 text-lg">
-                    1.5+ years of development experience
+                    2+ years of development experience
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

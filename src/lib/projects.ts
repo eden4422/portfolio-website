@@ -325,6 +325,8 @@ export const projects: Project[] = [
       "A cross-platform mobile and desktop application that uses image steganography as the foundation for a deterministic password generation system — deriving strong passwords from raw image binary data so that nothing ever needs to be stored.",
     image: "/Images/steganography.png",
     technologies: ["C#", ".NET MAUI", "Cross-Platform"],
+    githubUrl:
+      "https://github.com/NhanDucNguyen99/Steganography-Image-Password",
     featured: false,
     hackathon: true,
     slug: "steganography-password-manager",
